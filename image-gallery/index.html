@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+			rel="stylesheet"
+		/>
+		<title>Image Gallery/page</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				font-family: Verdana, Geneva, Tahoma, sans-serif;
+				line-height: 1em;
+				margin: 0 auto;
+			}
+			#wrapper {
+				max-width: 1280px;
+				background-color: #d2e3f5;
+				margin: 0 auto;
+			}
+			h1 {
+				text-align: center;
+				padding: 20px;
+			}
+			img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+			nav ul {
+				display: flex;
+				justify-content: space-between;
+				background-color: bisque;
+				width: 100%;
+				max-width: 1280px;
+				padding: 20px;
+			}
+			.primary-navigation,
+			.social-navigation {
+				display: flex;
+				justify-content: space-evenly;
+				text-decoration: none;
+			}
+			.primary-navigation,
+			.social-navigation li {
+				list-style: none;
+			}
+			.primary-navigation {
+				display: flex;
+			}
+			.social-navigation li {
+				display: flex;
+			}
+			.flex-container {
+				display: flex;
+				width: 100%;
+				height: auto;
+			}
+			.flex-container div {
+				border: 1px solid #777;
+				padding: 5px;
+			}
+
+			div.desc {
+				padding: 15px;
+				text-align: center;
+			}
+			/*gallery med flex og grid*/
+			.grid-container {
+				display: grid;
+			}
+			#mainPhoto {
+				grid-area: 1/1/2/-1;
+			}
+			#next,
+			#back {
+				font-size: 2.5em;
+				color: #fff;
+				align-self: center;
+				margin: 20px;
+				grid-area: 1/1/2/-1;
+				cursor: pointer;
+			}
+			#next {
+				justify-self: end;
+			}
+			footer {
+				background-color: bisque;
+				padding: 20px;
+				text-align: center;
+				color: chocolate;
+			}
+		</style></head
+	><!--head-->
+
+	<body>
+		<div id="wrapper">
+			<header>
+				<nav>
+					<ul>
+						<li class="primary-navigation"><a href="#"></a>HOME</li>
+						<li class="primary-navigation"><a href="#"></a>ABOUT</li>
+						<li class="primary-navigation"><a href="#"></a>CONTACT</li>
+						<li class="social-navigation"><a href="#"></a>FACEBOOK</li>
+						<li class="social-navigation"><a href="#"></a>LINKEDIN</li>
+						<li class="social-navigation"><a href="#"></a>INSTAGRAM</li>
+					</ul>
+				</nav>
+				<!--nav-->
+			</header>
+			<!--header-->
+
+			<main>
+				<h1>Gallery</h1>
+				<section>
+					<div class="grid-container">
+						<img src="images/4_graffiti_boar-copy.jpg" alt="" id="mainPhoto" />
+
+						<i id="back" class="fas fa-arrow-alt-circle-left"></i>
+
+						<i id="next" class="fas fa-arrow-alt-circle-right"></i>
+					</div>
+
+					<div class="flex-container">
+						<div>
+							<img src="images/4_graffiti_boar-copy.jpg" alt="" />
+							<div class="desc">Add a description of the image here</div>
+						</div>
+						<div>
+							<img src="images/4_graffiti_boar.jpg" alt="" />
+							<div class="desc">Add a description of the image here</div>
+						</div>
+						<div>
+							<img src="images/5_dali-copy.jpg" alt="" />
+							<div class="desc">Add a description of the image here</div>
+						</div>
+						<div>
+							<img src="images/5_dali.jpg" alt="" />
+							<div class="desc">Add a description of the image here</div>
+						</div>
+						<div>
+							<img src="images/6_morning.jpg" alt="" />
+							<div class="desc">Add a description of the image here</div>
+						</div>
+					</div>
+				</section>
+				<!--section-->
+				<footer>copy right@Dejene 2021</footer>
+			</main>
+			<!--main-->
+		</div>
+		<!--wrapper-->
+		<script>
+			const photoList = [
+				"4_graffiti_boar.jpg",
+				"5_dali.jpg",
+				"6_morning.jpg",
+				"4_graffiti.jpg",
+				"5_dali.jpg",
+			];
+			//console.log(photoList);
+			const bigImg = document.querySelector("#mainPhoto");
+			//console.log(photoList);
+
+			const thumbArray = Array.from[photoList];
+			let index = 0;
+			let newPhoto;
+
+			document.querySelector("#next").addEventListener("click", skift);
+			document.querySelector("#back").addEventListener("click", skift);
+
+			function skift() {
+				if (this.getAttribute("id") === "next") {
+					if (index < photoList.length - 1) {
+						index++;
+					}
+				} else {
+					if (index > 0) {
+						index--;
+					}
+				}
+				newPhoto = "images/" + photoList[index];
+				bigImg.setAttribute("src", newPhoto);
+
+				if (index === 0) {
+					back.style.display = "none";
+				} else if (index === photoList.length - 1) {
+					next.style.display = "none";
+				} else {
+					back.style.display = "block";
+					next.style.display = "block";
+				}
+			}
+		</script>
+	</body>
+	<!--body-->
+</html>

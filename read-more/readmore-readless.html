@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+			rel="stylesheet"
+		/>
+		<title>Read more and Read Less page</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				font-family: Verdana, Geneva, Tahoma, sans-serif;
+				line-height: 1em;
+				margin: 0 auto;
+			}
+			#wrapper {
+				max-width: 1280px;
+				background-color: #d2e3f5;
+				margin: 0 auto;
+			}
+			h1 {
+				text-align: center;
+				padding: 20px;
+				background-color: #0b4079;
+				color: #fff;
+			}
+			img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+			nav ul {
+				display: flex;
+				justify-content: space-between;
+				background-color: bisque;
+				width: 100%;
+				max-width: 1280px;
+				padding: 20px;
+			}
+			.primary-navigation,
+			.social-navigation {
+				display: flex;
+				justify-content: space-evenly;
+				text-decoration: none;
+			}
+			.primary-navigation,
+			.social-navigation li {
+				list-style: none;
+			}
+			.primary-navigation {
+				display: flex;
+			}
+			.social-navigation li {
+				display: flex;
+			}
+			.flex-container {
+				display: flex;
+				width: 100%;
+				height: auto;
+			}
+			.flex-container div {
+				border: 1px solid #777;
+				padding: 5px;
+			}
+			main {
+				margin-top: 3em;
+				margin-bottom: 2em;
+			}
+			article {
+				margin: 1em;
+				line-height: 1.5em;
+			}
+
+			#moreButton {
+				cursor: pointer;
+				font-size: 2em;
+				margin: auto 1em;
+			}
+			#moreInfo {
+				display: none;
+			}
+			span {
+				color: white;
+				padding: 10px;
+				margin: 10px;
+			}
+			footer {
+				background-color: bisque;
+				padding: 20px;
+				text-align: center;
+				color: chocolate;
+			}
+		</style></head
+	><!--head-->
+
+	<body>
+		<div id="wrapper">
+			<header>
+				<nav>
+					<ul>
+						<li class="primary-navigation"><a href="#"></a>HOME</li>
+						<li class="primary-navigation"><a href="#"></a>ABOUT</li>
+						<li class="primary-navigation"><a href="#"></a>CONTACT</li>
+						<li class="social-navigation"><a href="#"></a>FACEBOOK</li>
+						<li class="social-navigation"><a href="#"></a>LINKEDIN</li>
+						<li class="social-navigation"><a href="#"></a>INSTAGRAM</li>
+					</ul>
+				</nav>
+				<!--nav-->
+			</header>
+			<!--header-->
+			<h1>Read-more and Read-less</h1>
+			<main>
+				<article>
+					<p>
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores
+						itaque dignissimos unde sequi quis cumque officiis tempora numquam
+						facere voluptatibus! Similique eveniet quos repellendus quas! Vero
+						eligendi ut aliquam culpa.0 Lorem ipsum dolor sit, amet consectetur
+						adipisicing elit. Dolores itaque dignissimos unde sequi quis cumque
+						officiis tempora numquam facere voluptatibus! Similique eveniet quos
+						repellendus quas! Vero eligendi ut aliquam culpa.0
+					</p>
+					<div id="moreInfo">
+						<p>
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores
+							itaque dignissimos unde sequi quis cumque officiis tempora numquam
+							facere voluptatibus! Similique eveniet quos repellendus quas! Vero
+							eligendi ut aliquam culpa.0 Lorem ipsum dolor sit, amet
+							consectetur adipisicing elit. Dolores itaque dignissimos unde
+							sequi quis cumque officiis tempora numquam facere voluptatibus!
+							Similique eveniet quos repellendus quas! Vero eligendi ut aliquam
+							culpa.0
+						</p>
+						<p>
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores
+							itaque dignissimos unde sequi quis cumque officiis tempora numquam
+							facere voluptatibus! Similique eveniet quos repellendus quas! Vero
+							eligendi ut aliquam culpa.0 Lorem ipsum dolor sit, amet
+							consectetur adipisicing elit. Dolores itaque dignissimos unde
+							sequi quis cumque officiis tempora numquam facere voluptatibus!
+							Similique eveniet quos repellendus quas! Vero eligendi ut aliquam
+							culpa.0
+						</p>
+					</div>
+				</article>
+				<span id="moreButton">Read More</span>
+			</main>
+			<!--section-->
+			<footer>copy right@Dejene 2021</footer>
+
+			<!--main-->
+			<script>
+				const text = document.querySelector("#moreInfo");
+				const knap = document.querySelector("#moreButton");
+
+				knap.addEventListener("click", showHide);
+
+				function showHide() {
+					if (text.style.display !== "block") {
+						text.style.display = "block";
+						knap.textContent = "Read Less";
+					} else {
+						text.style.display = "none";
+						knap.textContent = "Read More";
+					}
+				}
+			</script>
+		</div>
+		<!--wrapper-->
+	</body>
+	<!--body-->
+</html>
